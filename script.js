@@ -84,12 +84,16 @@ function moveInvaders(){
   if (squares[currentShooterIndex].classList.contains('invader', 'shooter')){
     resultDisplay.innerHTML ="GAME OVER"
     clearInterval(invadersId)
+    document.removeEventListener('keydown', shoot)
+    document.removeEventListener('keydown', moveShooter)
   }
 
   for (let i = 0; i < alienInvaders.length; i++) {
     if(alienInvaders[i] > squares.length) {
       resultDisplay.innerHTML = "GAME OVER"
       clearInterval(invadersId)
+      document.removeEventListener('keydown', shoot)
+      document.removeEventListener('keydown', moveShooter)
     }
   }
 
